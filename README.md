@@ -1,61 +1,61 @@
-# منصة مستر إسلام — اللغة الإنجليزية ⚡
+# Ms. Sahar — English Made Simple
 
-منصة تعليمية لمادة **اللغة الإنجليزية** بستايل لامع مختلف: بنفسجي × كهرماني على خلفية منتصف الليل، مع حروف إنجليزية عملاقة متوهجة بتطفو في الخلفية.
+The personal English learning platform of **Ms. Sahar** — a clean, light experience built on the unified design system (white background, soft-bordered cards, 0.625rem radius) with a **fuchsia #C026D3** primary and **gold #F59E0B** secondary identity, plus a deep-plum hero with floating English letters.
 
-## ✦ المميزات
+## ✦ Highlights
 
-- **هيرو لامع**: اسم المستر بتدرج متلألئ + MR. ISLAM MOHAMED بخط Space Grotesk.
-- **حروف طافية**: حروف إنجليزية (A B C W X Y) متوهجة ومتحركة في الخلفية + ووترمارك ABC عملاق.
-- **ماركي مهارات**: Grammar · Vocabulary · Reading · Writing · Listening · Speaking.
-- **مميزات المنصة**: قواعد مبسطة، مفردات، امتحانات تفاعلية، متابعة مستمرة.
-- **الصفوف**: إعدادي وثانوي (قريبًا).
-- **عن المستر**: نبذة مع صورة مؤقتة في إطار بنفسجي/ذهبي.
-- تصميم متجاوب بالكامل — عربي RTL مع لمسات إنجليزية.
+- **Hero**: elegant deep-plum gradient (#1A0B1E → #2A1230) with floating S · E · G letters, a shimmering brand title, and a fuchsia/gold placeholder portrait frame.
+- **Skills marquee**: Grammar · Vocabulary · Reading · Writing · Listening · Speaking · Phonetics · Exams.
+- **Features**: simplified grammar, vocabulary in action, interactive quizzes, steady progress — four white cards with Lucide icons.
+- **Classes**: Grade 7 / Grade 8 / Grade 9 / High School — all with "Coming Soon" badges.
+- **About the teacher**: introduction with the placeholder photo.
+- **Navbar**: MS badge, section links, and a Login button (student portal coming soon).
+- Fully responsive — 100% English (LTR) with Plus Jakarta Sans body + Space Grotesk display.
 
-> 📌 **الإصدار الحالي لاندنج فقط بدون صفحة أدمن** (بتضاف لاحقًا) — بدون قاعدة بيانات أو API.
+> 📌 **Current version: landing page only** — no admin area, no database, no API.
 
-## ✦ تبديل صورة المستر
+## ✦ Replacing the teacher photo
 
-الصورة الحالية مؤقتة — استبدل الملف التالي بصورة المستر الشخصية (بنفس الاسم):
+The current portrait is a generated placeholder — replace this file with Ms. Sahar's photo (keep the same name):
 ```
 public/images/teacher-frame.jpg
 ```
 
-## ✦ النشر على Vercel
+## ✦ Deploy on Vercel
 
-جاهز للنشر المباشر بدون أي إعدادات:
+Ready to deploy with zero configuration:
 
-1. **Add New → Project → Import** مستودع `Adam-Hawash/Mr-Islam-English`
-2. اضغط **Deploy** وانتظر علامة النجاح ✅
-3. افتح الدومين من صفحة المشروع
+1. **Add New → Project → Import** the `Adam-Hawash/Ms-Sahar-English` repository
+2. Click **Deploy** and wait for the success check ✅
+3. Open the domain from the project page
 
-## ✦ التشغيل محليًا
+## ✦ Run locally
 
 ```bash
 bun install
 bun run dev
 ```
 
-افتح `http://localhost:3000`.
+Open `http://localhost:3000`.
 
-## ✦ التقنيات
+## ✦ Tech
 
 - **Next.js 16** (App Router) + **TypeScript**
-- **Tailwind CSS 4** + مكونات **shadcn/ui**
-- **Framer Motion** للحركات والطفو
-- خطوط: **Cairo** (عربي) + **Space Grotesk** (إنجليزي)
+- **Tailwind CSS 4** + shadcn/ui design tokens
+- **Framer Motion** for animations
+- Fonts: **Plus Jakarta Sans** (400–800, body) + **Space Grotesk** (display)
 
-## ✦ هيكل المشروع
+## ✦ Project structure
 
 ```
 src/
 ├── app/
-│   ├── layout.tsx            # الخطوط + metadata + RTL
-│   ├── page.tsx              # الرئيسية
-│   └── globals.css           # ثيم البريق الليلي
+│   ├── layout.tsx            # Fonts + metadata + lang="en" dir="ltr"
+│   ├── page.tsx              # Home (single route)
+│   └── globals.css           # Fuchsia/gold theme on the unified design system
 ├── components/
 │   ├── english/              # Landing, Navbar, Hero, LettersBackground,
 │   │                         # Marquee, Features, Grades, About, Footer
-│   └── ui/                   # button + sheet فقط
+│   └── ui/                   # button + sheet only
 └── lib/utils.ts
 ```

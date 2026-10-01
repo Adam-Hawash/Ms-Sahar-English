@@ -2,14 +2,14 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "منصة مستر إسلام | اللغة الإنجليزية",
+  title: "Ms. Sahar | English Made Simple",
   description:
-    "منصة مستر إسلام لتعليم اللغة الإنجليزية — قواعد مبسطة، مفردات، امتحانات تفاعلية، ومتابعة مستمرة. Learn English with Mr. Islam!",
+    "The English learning platform of Ms. Sahar — simplified grammar, vocabulary that sticks, interactive quizzes, and continuous follow-up. Learn English with confidence!",
   icons: { icon: "/favicon.svg" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0A0812",
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
 };
@@ -20,13 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" data-scroll-behavior="smooth">
-      {/* eslint-disable-next-line @next/next/no-page-custom-font -- App Router: الخطوط في الـlayout بتشتغل على كل الصفحات */}
+    <html lang="en" dir="ltr" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- App Router: fonts live in the root layout so they apply to every page */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>

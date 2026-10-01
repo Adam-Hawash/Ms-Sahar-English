@@ -3,30 +3,25 @@
 import { motion } from "framer-motion";
 
 /**
- * حروف إنجليزية عملاقة بتطفو في الخلفية — لمسة مميزة لمنصة الإنجليزي
- * حروف مضيئة + حروف محيطية (outline) + أوربس توهج بنفسجي/كهرماني
+ * Giant English letters floating in the hero background — the signature touch
+ * of the platform: S · E · G floaters at low opacity + glowing orbs + MS watermark
  */
 const FLOATERS = [
-  { ch: "A", x: "6%", y: "18%", size: "clamp(70px, 9vw, 150px)", cls: "letter-outline", dur: 9, delay: 0, rot: -12 },
-  { ch: "B", x: "22%", y: "62%", size: "clamp(50px, 6vw, 100px)", cls: "letter-glow", dur: 11, delay: 0.8, rot: 10 },
-  { ch: "C", x: "40%", y: "10%", size: "clamp(44px, 5vw, 84px)", cls: "letter-outline", dur: 8, delay: 1.6, rot: 8 },
-  { ch: "W", x: "58%", y: "70%", size: "clamp(60px, 7.5vw, 120px)", cls: "letter-glow", dur: 12, delay: 0.4, rot: -8 },
-  { ch: "X", x: "74%", y: "16%", size: "clamp(48px, 5.5vw, 92px)", cls: "letter-outline", dur: 10, delay: 2.2, rot: 14 },
-  { ch: "Y", x: "88%", y: "48%", size: "clamp(56px, 6.5vw, 110px)", cls: "letter-glow", dur: 9.5, delay: 1.1, rot: -14 },
-  { ch: "abc", x: "48%", y: "88%", size: "clamp(34px, 4vw, 64px)", cls: "letter-outline", dur: 10.5, delay: 0.6, rot: -4 },
-  { ch: "ENGLISH", x: "12%", y: "86%", size: "clamp(30px, 3.5vw, 56px)", cls: "letter-glow", dur: 13, delay: 1.9, rot: 6 },
+  { ch: "S", x: "7%", y: "20%", size: "clamp(80px, 10vw, 170px)", cls: "letter-outline-hero", dur: 10, delay: 0, rot: -12 },
+  { ch: "E", x: "40%", y: "66%", size: "clamp(60px, 7.5vw, 130px)", cls: "letter-glow", dur: 11.5, delay: 0.8, rot: 10 },
+  { ch: "G", x: "72%", y: "14%", size: "clamp(64px, 8vw, 140px)", cls: "letter-outline-hero", dur: 9.5, delay: 1.6, rot: 8 },
 ];
 
 const ORBS = [
-  { x: "-8%", y: "-12%", size: 420, color: "rgba(124,58,237,0.35)" },
-  { x: "70%", y: "10%", size: 360, color: "rgba(217,70,239,0.22)" },
-  { x: "30%", y: "75%", size: 300, color: "rgba(245,158,11,0.14)" },
+  { x: "-8%", y: "-12%", size: 420, color: "rgba(192,38,211,0.32)" },
+  { x: "70%", y: "10%", size: 360, color: "rgba(217,70,239,0.2)" },
+  { x: "30%", y: "75%", size: 300, color: "rgba(245,158,11,0.13)" },
 ];
 
 export function LettersBackground() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* أوربس التوهج */}
+      {/* Glow orbs */}
       {ORBS.map((o, i) => (
         <div
           key={i}
@@ -41,7 +36,7 @@ export function LettersBackground() {
         />
       ))}
 
-      {/* الحروف الطافية */}
+      {/* Floating letters */}
       {FLOATERS.map((f, i) => (
         <motion.span
           key={i}
@@ -54,12 +49,12 @@ export function LettersBackground() {
         </motion.span>
       ))}
 
-      {/* ووترمارك عملاق في النص */}
+      {/* Giant watermark in the center */}
       <span
-        className="letter-outline absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-bold tracking-tight opacity-60"
-        style={{ fontSize: "clamp(120px, 22vw, 340px)" }}
+        className="letter-outline-hero absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-bold tracking-tight opacity-70"
+        style={{ fontSize: "clamp(140px, 26vw, 400px)" }}
       >
-        ABC
+        MS
       </span>
     </div>
   );

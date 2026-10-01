@@ -19,7 +19,7 @@ const eslintConfig = [...nextCoreWebVitals, ...nextTypescript, {
     // React rules
     "react-hooks/exhaustive-deps": "off",
     "react-hooks/purity": "off",
-    /* قاعدة مبالغ فيها — بتضرب حتى في مكونات shadcn الأساسية (carousel / use-mobile) */
+    /* Overly strict — trips even on core shadcn components (carousel / use-mobile) */
     "react-hooks/set-state-in-effect": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
