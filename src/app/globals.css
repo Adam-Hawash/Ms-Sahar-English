@@ -6,8 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-jakarta);
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-cairo);
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -29,52 +29,66 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Brand palette — fuchsia primary, gold secondary, deep plum for the hero */
-  --color-brand-50: #FDF4FF;
-  --color-brand-100: #FAE8FF;
-  --color-brand-200: #F5D0FE;
-  --color-brand-300: #F0ABFC;
-  --color-brand-400: #E879F9;
-  --color-brand-500: #D946EF;
-  --color-brand-600: #C026D3;
-  --color-brand-700: #A21CAF;
-  --color-brand-800: #86198F;
-  --color-brand-900: #701A75;
-  --color-gold-100: #FEF3C7;
-  --color-gold-200: #FDE68A;
-  --color-gold-300: #FCD34D;
-  --color-gold-400: #FBBF24;
-  --color-gold-500: #F59E0B;
-  --color-gold-600: #D97706;
-  --color-gold-700: #B45309;
-  --color-ink: #1A1A1A;
-  --color-plum-900: #1A0B1E;
-  --color-plum-800: #2A1230;
-  --color-plum-700: #3A1B42;
-  --color-plum-600: #4C2457;
+  /* الهوية الجديدة «أكاديمية أنيقة دافئة» — تيل غامق + كريمي دافي + ذهبي عسلي + تيراكوتا */
+  --color-teal-50: #EEF4F1;
+  --color-teal-100: #DCE9E3;
+  --color-teal-200: #B9D3C9;
+  --color-teal-300: #8FB8AC;
+  --color-teal-400: #5E9486;
+  --color-teal-500: #3E7A6D;
+  --color-teal-600: #2A6257;
+  --color-teal-700: #1E4F47;
+  --color-teal-800: #114B4C;
+  --color-teal-900: #0F3D3E;
+  --color-teal-950: #0A2C2D;
+
+  --color-cream-50: #FAF6EE;
+  --color-cream-100: #F3EDDF;
+  --color-cream-200: #EAE1CC;
+  --color-cream-300: #DED2B4;
+
+  --color-gold-50: #FBF6EA;
+  --color-gold-100: #F5EAD2;
+  --color-gold-200: #EBD6A9;
+  --color-gold-300: #E3C67E;
+  --color-gold-400: #D9A441;
+  --color-gold-500: #C08F2F;
+  --color-gold-600: #A67A25;
+  --color-gold-700: #85611D;
+
+  --color-terra-50: #FBF1EB;
+  --color-terra-100: #F6E2D6;
+  --color-terra-200: #EBC4AC;
+  --color-terra-300: #E0A184;
+  --color-terra-400: #D48A63;
+  --color-terra-500: #C96F4A;
+  --color-terra-600: #A85A3B;
+  --color-terra-700: #86462E;
+
+  --color-ink: #1B2E2C;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: #FFFFFF;
-  --foreground: #1A1A1A;
-  --card: #FFFFFF;
-  --card-foreground: #1A1A1A;
-  --popover: #FFFFFF;
-  --popover-foreground: #1A1A1A;
-  --primary: #C026D3;
-  --primary-foreground: #FFFFFF;
-  --secondary: #FDF4FF;
-  --secondary-foreground: #86198F;
-  --muted: #F8F6F9;
-  --muted-foreground: #6F6778;
-  --accent: #FDF4FF;
-  --accent-foreground: #86198F;
-  --destructive: #E11D48;
-  --border: #ECE7EE;
-  --input: #E3DCE8;
-  --ring: #C026D3;
-  --font-jakarta: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --background: #FAF6EE;
+  --foreground: #1B2E2C;
+  --card: #FFFDF7;
+  --card-foreground: #1B2E2C;
+  --popover: #FFFDF7;
+  --popover-foreground: #1B2E2C;
+  --primary: #114B4C;
+  --primary-foreground: #FAF6EE;
+  --secondary: #F3EDDF;
+  --secondary-foreground: #114B4C;
+  --muted: #F3EDDF;
+  --muted-foreground: #5E6D66;
+  --accent: #F5EAD2;
+  --accent-foreground: #85611D;
+  --destructive: #B44532;
+  --border: #E7DFCC;
+  --input: #DCD2B8;
+  --ring: #D9A441;
+  --font-cairo: "Cairo", ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -88,147 +102,84 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-jakarta);
+  font-family: var(--font-cairo);
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(192, 38, 211, 0.18);
-  color: #1A1A1A;
+  background: rgba(217, 164, 65, 0.3);
+  color: #1B2E2C;
 }
 
-/* Elegant fuchsia scrollbar */
+/* سكرول بار هادي بلون التيل */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFFFFF;
+  background: #F3EDDF;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #C026D3, #D946EF);
+  background: linear-gradient(180deg, #114B4C, #2A6257);
   border-radius: 8px;
-  border: 2px solid #FFFFFF;
+  border: 2px solid #F3EDDF;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #A21CAF, #C026D3);
+  background: linear-gradient(180deg, #0F3D3E, #114B4C);
 }
 
-/* Glass for dark surfaces (hero buttons) */
+/* زجاج للأسطح الغامقة (أزرار الهيرو) */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(240, 171, 252, 0.16);
+  background: rgba(250, 246, 238, 0.05);
+  border: 1px solid rgba(250, 246, 238, 0.16);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
-/* Light glass for the navbar once scrolled */
+/* زجاج فاتح للنافبار بعد السكرول */
 .glass-strong {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(250, 246, 238, 0.88);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
-/* Shimmering gradient text on light backgrounds */
-.text-shine {
-  background: linear-gradient(
-    100deg,
-    #A21CAF 0%,
-    #C026D3 25%,
-    #F59E0B 50%,
-    #C026D3 75%,
-    #A21CAF 100%
-  );
-  background-size: 200% auto;
+/* نص بتدرج تيل → ذهبي (ثابت، من غير أنيميشن صاخب) */
+.text-gradient-brand {
+  background: linear-gradient(90deg, #114B4C 0%, #2A6257 45%, #D9A441 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shine 5s linear infinite;
 }
 
-/* Shimmering gradient text on the dark hero */
-.text-shine-hero {
-  background: linear-gradient(
-    100deg,
-    #F0ABFC 0%,
-    #E879F9 25%,
-    #FBBF24 50%,
-    #E879F9 75%,
-    #F0ABFC 100%
+/* حروف Serif شفافة كعلامة مائية — الأسطح الفاتحة */
+.serif-ghost {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(17, 75, 76, 0.12);
+  font-family: "Fraunces", serif;
+  user-select: none;
+}
+
+/* حروف Serif شفافة كعلامة مائية — الأسطح الغامقة */
+.serif-ghost-light {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(250, 246, 238, 0.14);
+  font-family: "Fraunces", serif;
+  user-select: none;
+}
+
+/* سطور دفتر خفيفة للهيرو الغامق */
+.paper-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 55px,
+    rgba(250, 246, 238, 0.05) 55px,
+    rgba(250, 246, 238, 0.05) 56px
   );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shine 5s linear infinite;
 }
 
-@keyframes shine {
-  to {
-    background-position: 200% center;
-  }
-}
-
-/* Animated gradient border for highlighted elements */
-.glow-ring {
-  position: relative;
-}
-.glow-ring::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, #C026D3, #D946EF, #F59E0B, #C026D3);
-  background-size: 300% 300%;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: ringShift 6s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes ringShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Giant English letters as backgrounds — light surfaces */
-.letter-outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(192, 38, 211, 0.12);
-  font-family: "Space Grotesk", sans-serif;
-  user-select: none;
-}
-
-/* Giant English letters as backgrounds — dark hero */
-.letter-outline-hero {
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(240, 171, 252, 0.2);
-  font-family: "Space Grotesk", sans-serif;
-  user-select: none;
-}
-
-/* Glowing letters on the dark hero */
-.letter-glow {
-  color: rgba(240, 171, 252, 0.13);
-  text-shadow:
-    0 0 40px rgba(217, 70, 239, 0.35),
-    0 0 90px rgba(245, 158, 11, 0.16);
-  font-family: "Space Grotesk", sans-serif;
-  user-select: none;
-}
-
-/* Skills marquee */
+/* شريط المهارات المتحرك */
 @keyframes marquee-ltr {
   from {
     transform: translateX(0);
@@ -245,10 +196,20 @@ body {
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
 
-/* Glow orb */
+/* توهج دائري ناعم */
 .orb {
   position: absolute;
   border-radius: 9999px;
   filter: blur(90px);
   pointer-events: none;
+}
+
+/* احترام prefers-reduced-motion: إيقاف الحركات المستمرة */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
 }

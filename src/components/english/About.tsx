@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { BadgeCheck, Quote } from "lucide-react";
+import { Squiggle, TeacherPlaceholder } from "./decor";
 
 const TRAITS = [
   "Clear, friendly explanations",
@@ -13,14 +13,21 @@ const TRAITS = [
 
 export function About() {
   return (
-    <section id="about" className="relative scroll-mt-20 py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="about" className="relative scroll-mt-20 overflow-hidden py-20 sm:py-24">
+      {/* توهج كريمي هادي ورا الكارت */}
+      <div
+        aria-hidden
+        className="orb left-1/2 top-1/2 h-[380px] w-[640px] -translate-x-1/2 -translate-y-1/2"
+        style={{ background: "radial-gradient(circle, rgba(217,164,65,0.09), transparent 70%)" }}
+      />
+
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mb-12 text-center">
           <p className="font-display text-sm font-semibold tracking-[0.3em] text-gold-600" dir="ltr">
             YOUR TEACHER
           </p>
-          <h2 className="mt-2 text-3xl font-black text-foreground sm:text-4xl">
-            Meet <span className="text-shine">Ms. Sahar</span>
+          <h2 className="mt-2 text-3xl font-black text-foreground sm:text-4xl" dir="ltr">
+            Meet <Squiggle>Ms. Sahar</Squiggle>
           </h2>
         </div>
 
@@ -29,36 +36,31 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="relative mx-auto grid max-w-4xl items-center gap-8 overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-[0_10px_40px_rgba(26,10,30,0.07)] sm:p-10 md:grid-cols-[280px_1fr]"
+          className="relative mx-auto grid max-w-4xl items-center gap-8 overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-[0_14px_50px_rgba(15,61,62,0.08)] sm:p-10 md:grid-cols-[280px_1fr]"
         >
-          {/* Teacher photo (temporary placeholder) */}
+          {/* شريط علوي ذهبي رفيع — لمسة الكتب المدرسية */}
+          <span aria-hidden className="absolute inset-x-0 top-0 h-1 bg-gradient-to-l from-gold-400 via-gold-300 to-teal-600" />
+
+          {/* بورتريه المعلمة — نفس الهوية الأنيقة (الصورة الحقيقية تتبدل بنفس المكان) */}
           <div className="relative mx-auto w-56 sm:w-64 md:w-full">
-            <div className="overflow-hidden rounded-2xl border border-brand-200 shadow-[0_12px_50px_rgba(192,38,211,0.2)]">
-              <Image
-                src="/images/teacher-frame.jpg"
-                alt="Placeholder frame for Ms. Sahar's photo"
-                width={864}
-                height={1152}
-                className="h-auto w-full object-cover"
-              />
-            </div>
+            <TeacherPlaceholder compact />
           </div>
 
           <div>
-            <Quote aria-hidden className="mb-3 h-8 w-8 text-brand-300" />
-            <p className="text-base leading-8 text-foreground/85 sm:text-lg sm:leading-9">
-              Hello and welcome! I&apos;m <strong className="text-brand-700">Ms. Sahar</strong>, your English teacher.
+            <Quote aria-hidden className="mb-3 h-8 w-8 text-gold-400" />
+            <p className="text-base leading-8 text-foreground/85 sm:text-lg sm:leading-9" dir="ltr">
+              Hello and welcome! I&apos;m <strong className="text-teal-800">Ms. Sahar</strong>, your English teacher.
               I believe English isn&apos;t a subject to memorize — it&apos;s a skill built through understanding
               and enjoyable practice. Here you&apos;ll find everything clear and organized: simple explanations,
               steady practice, and quizzes that measure your real progress.
             </p>
-            <ul className="mt-6 flex flex-wrap gap-2.5">
+            <ul className="mt-6 flex flex-wrap gap-2.5" dir="ltr">
               {TRAITS.map((t) => (
                 <li
                   key={t}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-xs font-bold text-brand-800"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-teal-800/20 bg-teal-50 px-3.5 py-1.5 text-xs font-bold text-teal-800"
                 >
-                  <BadgeCheck className="h-3.5 w-3.5 text-gold-600" />
+                  <BadgeCheck className="h-3.5 w-3.5 text-gold-500" />
                   {t}
                 </li>
               ))}
