@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+/* (ص8) حماية المنصة: منع F12/الزرار + قفل أسود خالص لأدوات المطوّر — زي باقي المنصات */
+import { RecordingGuard } from "@/components/RecordingGuard";
 
 export const metadata: Metadata = {
   title: "مس سحر | English Made Simple",
@@ -31,7 +33,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <RecordingGuard />
+      </body>
     </html>
   );
 }
