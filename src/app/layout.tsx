@@ -22,8 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" data-scroll-behavior="smooth">
+    <html lang="ar" dir="rtl" translate="no" data-scroll-behavior="smooth">
       <head>
+      <meta name="google" content="notranslate" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* خطوط الهوية: Fraunces (Serif أنيق للإنجليزي) + Cairo للعربي */}
